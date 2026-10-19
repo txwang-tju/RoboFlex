@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roboflex-intent-arm"
+version = "0.1.0"
+description = "RoboFlex temporal intent, shared autonomy and constrained arm control prototype"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+vision = ["numpy>=1.26,<3", "opencv-contrib-python>=4.8,<5", "mediapipe>=0.10.14,<0.11"]
+serial = ["pyserial>=3.5,<4"]
+
+[project.scripts]
+roboflex = "roboflex.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["roboflex*"]

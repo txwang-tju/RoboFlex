@@ -1,0 +1,51 @@
+test_ambiguous_never_selects (test_core.ControllerTests.test_ambiguous_never_selects) ... ok
+test_bad_plan_sends_no_move (test_core.ControllerTests.test_bad_plan_sends_no_move) ... ok
+test_calibrated_pose_disappears_before_grasp (test_core.ControllerTests.test_calibrated_pose_disappears_before_grasp) ... ok
+test_cancel_after_gripping_does_not_drop_object (test_core.ControllerTests.test_cancel_after_gripping_does_not_drop_object) ... ok
+test_cancel_latched_no_more_commands (test_core.ControllerTests.test_cancel_latched_no_more_commands) ... ok
+test_confirmation_expires (test_core.ControllerTests.test_confirmation_expires) ... ok
+test_early_held_confirm_not_reused (test_core.ControllerTests.test_early_held_confirm_not_reused) ... ok
+test_estop_and_explicit_reset_no_automatic_restart (test_core.ControllerTests.test_estop_and_explicit_reset_no_automatic_restart) ... ok
+test_glove_without_visual_hand_cannot_select (test_core.ControllerTests.test_glove_without_visual_hand_cannot_select) ... ok
+test_hand_loss_stops (test_core.ControllerTests.test_hand_loss_stops) ... ok
+test_intention_alone_never_starts (test_core.ControllerTests.test_intention_alone_never_starts) ... ok
+test_natural_stationary_hand_is_no_intent (test_core.ControllerTests.test_natural_stationary_hand_is_no_intent) ... ok
+test_new_confirm_after_release_starts (test_core.ControllerTests.test_new_confirm_after_release_starts) ... ok
+test_observation_gap_requires_reconfirmation (test_core.ControllerTests.test_observation_gap_requires_reconfirmation) ... ok
+test_out_of_order_frame_faults (test_core.ControllerTests.test_out_of_order_frame_faults) ... ok
+test_pinch_changes_ray_but_confirms_locked_target (test_core.ControllerTests.test_pinch_changes_ray_but_confirms_locked_target) ... ok
+test_pinch_held_before_selection_must_release (test_core.ControllerTests.test_pinch_held_before_selection_must_release) ... ok
+test_retraction_before_confirmation_cancels (test_core.ControllerTests.test_retraction_before_confirmation_cancels) ... ok
+test_stale_camera_frame_stops (test_core.ControllerTests.test_stale_camera_frame_stops) ... ok
+test_stale_glove_confirmation_ignored (test_core.ControllerTests.test_stale_glove_confirmation_ignored) ... ok
+test_success_is_complete_sequence_and_home (test_core.ControllerTests.test_success_is_complete_sequence_and_home) ... ok
+test_target_change_does_not_silently_retarget (test_core.ControllerTests.test_target_change_does_not_silently_retarget) ... ok
+test_complete_plan_limits_and_joint_speed (test_core.GeometryTests.test_complete_plan_limits_and_joint_speed) ... ok
+test_invalid_configuration_rejected (test_core.GeometryTests.test_invalid_configuration_rejected) ... ok
+test_inverse_forward_round_trip (test_core.GeometryTests.test_inverse_forward_round_trip) ... ok
+test_nonfinite_pose_rejected (test_core.GeometryTests.test_nonfinite_pose_rejected) ... ok
+test_thin_keepout_between_samples_caught (test_core.GeometryTests.test_thin_keepout_between_samples_caught) ... ok
+test_unreachable_ik_rejected (test_core.GeometryTests.test_unreachable_ik_rejected) ... ok
+test_wrong_start_pose_rejected (test_core.GeometryTests.test_wrong_start_pose_rejected) ... ok
+test_disappeared_target_probability_transfers_to_none (test_core.IntentTests.test_disappeared_target_probability_transfers_to_none) ... ok
+test_duplicate_timestamp_rejected (test_core.IntentTests.test_duplicate_timestamp_rejected) ... ok
+test_time_based_smoothing_independent_of_fps (test_core.IntentTests.test_time_based_smoothing_independent_of_fps) ... ok
+test_invalid_rigid_transform_rejected (test_vision.OpticalGeometryTests.test_invalid_rigid_transform_rejected) ... ok
+test_real_hand_model_and_aruco_on_blank_fixture_image (test_vision.OpticalGeometryTests.test_real_hand_model_and_aruco_on_blank_fixture_image) ... INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1791761107.264098   15156 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1791761107.279030   15156 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1791761107.303655    5728 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+ok
+test_synthetic_marker_pose_with_known_projection (test_vision.OpticalGeometryTests.test_synthetic_marker_pose_with_known_projection) ... ok
+test_wrong_resolution_rejected (test_vision.OpticalGeometryTests.test_wrong_resolution_rejected) ... ok
+test_main_loop_stall_triggers_independent_watchdog (test_wire.WireTests.test_main_loop_stall_triggers_independent_watchdog) ... ok
+test_physical_handshake_refuses_unconfigured_motion (test_wire.WireTests.test_physical_handshake_refuses_unconfigured_motion) ... ok
+test_real_tcp_completion_and_measured_state (test_wire.WireTests.test_real_tcp_completion_and_measured_state) ... ok
+test_stop_preempts_waiting_for_motion_ack (test_wire.WireTests.test_stop_preempts_waiting_for_motion_ack) ... ok
+test_stop_rejection_faults_without_resend_loop (test_wire.WireTests.test_stop_rejection_faults_without_resend_loop) ... ok
+test_wrong_ack_id_cannot_advance_plan (test_wire.WireTests.test_wrong_ack_id_cannot_advance_plan) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 3.392s
+
+OK

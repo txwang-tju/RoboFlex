@@ -1,0 +1,100 @@
+{
+  "intent": {
+    "smoothing_s": 0.22,
+    "select_score": 0.72,
+    "select_margin": 0.22,
+    "dwell_s": 0.65,
+    "ray_sigma_rad": 0.2,
+    "sensor_max_age_s": 0.15,
+    "withdraw_speed_uv_s": 0.25,
+    "withdraw_hold_s": 0.16,
+    "pinch_hold_s": 0.35
+  },
+  "control": {
+    "max_observation_age_s": 0.3,
+    "hand_loss_timeout_s": 0.65,
+    "confirmation_timeout_s": 5.0,
+    "max_target_shift_mm": 15.0,
+    "max_uv_shift": 0.12,
+    "command_timeout_s": 1.0,
+    "watchdog_s": 0.45
+  },
+  "arm": {
+    "link1_mm": 160.0,
+    "link2_mm": 160.0,
+    "tool_mm": 40.0,
+    "base_height_mm": 60.0,
+    "tool_pitch_deg": -90.0,
+    "elbow_sign": -1,
+    "joint_limits_deg": [
+      [
+        -140,
+        140
+      ],
+      [
+        -10,
+        170
+      ],
+      [
+        -165,
+        0
+      ],
+      [
+        -180,
+        80
+      ]
+    ],
+    "workspace_min_mm": [
+      70,
+      -220,
+      10
+    ],
+    "workspace_max_mm": [
+      330,
+      220,
+      260
+    ],
+    "home_mm": [
+      170,
+      0,
+      180
+    ],
+    "handoff_mm": [
+      180,
+      100,
+      35
+    ],
+    "transit_z_mm": 150.0,
+    "cartesian_step_mm": 10.0,
+    "max_speed_mm_s": 100.0,
+    "max_joint_speed_deg_s": 35.0,
+    "min_step_s": 0.05,
+    "gripper_open_mm": 70.0,
+    "gripper_max_mm": 80.0,
+    "gripper_duration_s": 0.4,
+    "home_tolerance_deg": 3.0,
+    "keepouts_mm": []
+  },
+  "calibration_verified": false,
+  "camera_calibration": null,
+  "targets": {
+    "0": {
+      "label": "cup",
+      "position_mm": [
+        210,
+        -70,
+        35
+      ],
+      "grip_mm": 35
+    },
+    "1": {
+      "label": "box",
+      "position_mm": [
+        230,
+        60,
+        35
+      ],
+      "grip_mm": 30
+    }
+  }
+}
