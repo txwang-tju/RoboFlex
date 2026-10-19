@@ -6,6 +6,12 @@
 
 快速入口：[作品介绍 PDF](presentation/知意随行_作品介绍.pdf) · [系统架构](docs/system_architecture.md) · [接口与任务状态](docs/system_interfaces.md) · [方法来源](docs/method_sources.md)
 
+## 系统架构
+
+![系统架构](assets/system-architecture.png)
+
+GPT-6输出候选目标与步骤。VLA动作候选经过平台适配与全身规划进入执行，状态和完成证据反馈至任务管理。
+
 ## 原型实拍视频
 
 [![查看原型实拍视频文件](assets/robot-demo-poster.jpg)](media/robot-demo.mp4)
