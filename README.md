@@ -12,6 +12,12 @@
 
 [查看视频文件](media/robot-demo.mp4)：约 66 秒，静音，保留原演示的 1.5 倍播放速度。H.264 MP4 格式；GitHub 文件页点击 `View raw` 可获取视频，在浏览器或本地播放器中播放。
 
+### 基础运动模式
+
+[![查看基础运动模式视频](assets/basic-motion-poster.jpg)](media/basic-motion.mp4)
+
+[查看基础运动模式视频文件](media/basic-motion.mp4)：约 29 秒，保留原始画质和声音。GitHub 文件页点击 `View raw` 可获取视频。
+
 下载仓库后，双击demo/index.html可查看离线交互演示。随附代码的具体运行方式如下。
 
 
