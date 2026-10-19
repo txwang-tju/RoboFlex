@@ -12,6 +12,20 @@
 
 GPT-6输出候选目标与步骤。VLA动作候选经过平台适配与全身规划进入执行，状态和完成证据反馈至任务管理。
 
+## 硬件组成
+
+### 手势传感手套
+
+![手势传感手套及柔性电阻、IMU、ESP8266和电池标注](assets/gesture-glove-hardware.png)
+
+手套集成柔性电阻、JY901 IMU、ESP8266无线通信模块与电池，采集手指弯曲和手部姿态信息。
+
+### 移动抓取平台
+
+![移动抓取平台及机械爪、舵机、树莓派、STM32F4和通信模块标注](assets/mobile-manipulator-hardware.png)
+
+平台由移动底盘、机械爪与舵机构成，配合树莓派、STM32F4控制器及4G/Wi-Fi通信模块完成控制与通信。
+
 ## 原型实拍视频
 
 [![查看原型实拍视频文件](assets/robot-demo-poster.jpg)](media/robot-demo.mp4)
@@ -23,6 +37,12 @@ GPT-6输出候选目标与步骤。VLA动作候选经过平台适配与全身规
 [![查看基础运动模式视频](assets/basic-motion-poster.jpg)](media/basic-motion.mp4)
 
 [查看基础运动模式视频文件](media/basic-motion.mp4)：约 29 秒，保留原始画质和声音。GitHub 文件页点击 `View raw` 可获取视频。
+
+## 相关专利
+
+《一种远程手势控制的抓取小车》，实用新型专利，授权公告号 **CN 216781806 U**。以下为专利首页。
+
+![一种远程手势控制的抓取小车实用新型专利首页](assets/gesture-controlled-robot-patent.png)
 
 下载仓库后，双击demo/index.html可查看离线交互演示。随附代码的具体运行方式如下。
 
