@@ -6,6 +6,12 @@
 
 快速入口：[作品介绍 PDF](presentation/知意随行_作品介绍.pdf) · [系统架构](docs/system_architecture.md) · [接口与任务状态](docs/system_interfaces.md) · [方法来源](docs/method_sources.md)
 
+## 原型实拍视频
+
+[![点击观看原型实拍视频](assets/robot-demo-poster.jpg)](media/robot-demo.mp4)
+
+[点击观看视频](media/robot-demo.mp4)：约 66 秒，静音，保留原演示的 1.5 倍播放速度。
+
 下载仓库后，双击demo/index.html可查看离线交互演示。随附代码的具体运行方式如下。
 
 
