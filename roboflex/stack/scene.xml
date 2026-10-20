@@ -1,0 +1,60 @@
+<mujoco model="RoboFlex reference mobile manipulator">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.004" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <visual><global offwidth="960" offheight="720"/><headlight ambient="0.5 0.5 0.5" diffuse="0.7 0.7 0.7"/></visual>
+  <default><joint damping="1" armature=".01"/><geom friction="0.8 0.01 0.001" solref="0.01 1"/></default>
+  <worldbody>
+    <light pos="0.6 -0.5 3"/>
+    <geom name="floor" type="plane" size="3 3 .1" rgba=".90 .93 .95 1"/>
+    <camera name="overview" pos="1.9 -2.2 1.8" xyaxes=".77 .64 0 -.32 .39 .86"/>
+    <geom name="obstacle" type="box" pos=".55 .18 .10" size=".07 .10 .10" rgba=".65 .70 .75 1"/>
+    <geom name="tray_floor" type="box" pos="1.15 .55 .02" size=".16 .14 .02" rgba=".1 .6 .6 1"/>
+    <geom type="box" pos=".98 .55 .065" size=".01 .15 .065" rgba=".1 .6 .6 1"/>
+    <geom type="box" pos="1.32 .55 .065" size=".01 .15 .065" rgba=".1 .6 .6 1"/>
+    <geom type="box" pos="1.15 .40 .065" size=".16 .01 .065" rgba=".1 .6 .6 1"/>
+    <geom type="box" pos="1.15 .70 .065" size=".16 .01 .065" rgba=".1 .6 .6 1"/>
+    <body name="robot" pos="0 0 .09" gravcomp="1">
+      <joint name="base_x" type="slide" axis="1 0 0" limited="false" damping="20"/>
+      <joint name="base_y" type="slide" axis="0 1 0" limited="false" damping="20"/>
+      <joint name="base_yaw" type="hinge" axis="0 0 1" limited="false" damping="5"/>
+      <geom type="box" size=".10 .08 .04" mass="1.5" contype="0" conaffinity="0" rgba=".04 .30 .48 1"/>
+      <geom type="cylinder" pos=".07 .09 -.035" euler="1.5708 0 0" size=".035 .012" contype="0" conaffinity="0" rgba=".1 .1 .1 1"/>
+      <geom type="cylinder" pos="-.07 .09 -.035" euler="1.5708 0 0" size=".035 .012" contype="0" conaffinity="0" rgba=".1 .1 .1 1"/>
+      <geom type="cylinder" pos=".07 -.09 -.035" euler="1.5708 0 0" size=".035 .012" contype="0" conaffinity="0" rgba=".1 .1 .1 1"/>
+      <geom type="cylinder" pos="-.07 -.09 -.035" euler="1.5708 0 0" size=".035 .012" contype="0" conaffinity="0" rgba=".1 .1 .1 1"/>
+      <camera name="robot_camera" pos=".06 0 .13" xyaxes="0 -1 0 .342 0 .94"/>
+      <body name="arm_base" pos="0 0 .09" gravcomp="1">
+        <joint name="arm_yaw" axis="0 0 1" range="-2.44 2.44"/>
+        <geom type="cylinder" size=".035 .025" mass=".15" contype="0" conaffinity="0" rgba=".2 .6 .7 1"/>
+        <body name="upper" gravcomp="1">
+          <joint name="shoulder" axis="0 -1 0" range="-.18 2.97"/>
+          <geom type="capsule" fromto="0 0 0 .16 0 0" size=".014" mass=".16" contype="0" conaffinity="0" rgba=".2 .65 .75 1"/>
+          <body name="forearm" pos=".16 0 0" gravcomp="1">
+            <joint name="elbow" axis="0 -1 0" range="-2.88 0"/>
+            <geom type="capsule" fromto="0 0 0 .16 0 0" size=".012" mass=".13" contype="0" conaffinity="0" rgba=".2 .65 .75 1"/>
+            <body name="tool" pos=".16 0 0" gravcomp="1">
+              <joint name="wrist" axis="0 -1 0" range="-3.14 1.4"/>
+              <geom type="capsule" fromto="0 0 0 .04 0 0" size=".012" mass=".08" contype="0" conaffinity="0" rgba=".9 .6 .2 1"/>
+              <site name="grip_site" pos=".04 0 0" size=".009" rgba=".9 .3 .1 1"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="bottle" pos=".65 -.35 .065">
+      <freejoint name="bottle_free"/>
+      <geom name="bottle_geom" type="cylinder" size=".025 .06" mass=".08" rgba=".2 .55 .85 1"/>
+    </body>
+    <body name="grasp_anchor" mocap="true" pos="0 0 1"><geom type="sphere" size=".004" contype="0" conaffinity="0" rgba="0 0 0 0"/></body>
+  </worldbody>
+  <equality><weld name="grasp_attachment_approximation" body1="grasp_anchor" body2="bottle" relpose="0 0 0 1 0 0 0" active="false" solref=".005 1"/></equality>
+  <actuator>
+    <position joint="base_x" kp="5000" kv="180"/>
+    <position joint="base_y" kp="5000" kv="180"/>
+    <position joint="base_yaw" kp="500" kv="40"/>
+    <position joint="arm_yaw" kp="150" kv="12"/>
+    <position joint="shoulder" kp="150" kv="12"/>
+    <position joint="elbow" kp="150" kv="12"/>
+    <position joint="wrist" kp="100" kv="8"/>
+  </actuator>
+</mujoco>

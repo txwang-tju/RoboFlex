@@ -1,0 +1,77 @@
+{
+  "schema": "roboflex.sim-report.v1",
+  "scenario": "success",
+  "provider": "fixture_replay_NOT_live_VLM",
+  "state": "COMPLETE",
+  "phase": "VERIFY",
+  "reason": "destination_verified_in_simulation",
+  "duration_s": 11.24,
+  "destination_verified": true,
+  "attached": false,
+  "replans": 0,
+  "events": [
+    {
+      "t": 0.0,
+      "event": "phase",
+      "phase": "APPROACH"
+    },
+    {
+      "t": 2.44,
+      "event": "phase",
+      "phase": "OBSERVE"
+    },
+    {
+      "t": 2.86,
+      "event": "phase",
+      "phase": "GRASP"
+    },
+    {
+      "t": 3.48,
+      "event": "grasp_attachment",
+      "approximation": true
+    },
+    {
+      "t": 3.48,
+      "event": "phase",
+      "phase": "LIFT"
+    },
+    {
+      "t": 4.62,
+      "event": "phase",
+      "phase": "CARRY"
+    },
+    {
+      "t": 9.5,
+      "event": "phase",
+      "phase": "PLACE"
+    },
+    {
+      "t": 10.04,
+      "event": "release"
+    },
+    {
+      "t": 10.04,
+      "event": "phase",
+      "phase": "VERIFY"
+    },
+    {
+      "t": 11.24,
+      "event": "task_complete",
+      "object_xyz": [
+        1.1518458114141312,
+        0.5500007719178827,
+        0.09998548916167617
+      ]
+    }
+  ],
+  "control_period_s": 0.02,
+  "physics_period_s": 0.004,
+  "disclosures": [
+    "synthetic operator/glove features",
+    "fixture VLM unless explicitly configured",
+    "simulator-truth spatial grounding",
+    "holonomic base without roller contact model",
+    "grasp uses attachment constraint, not soft-gripper force mechanics",
+    "reference planner, not complete reproduction of the research optimizer"
+  ]
+}

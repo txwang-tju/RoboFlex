@@ -1,0 +1,28 @@
+{
+  "proposal": {
+    "intent": "PICK_PLACE",
+    "object_id": "bottle",
+    "destination_id": "tray",
+    "confidence": 0.95,
+    "reason": "recorded contract fixture"
+  },
+  "proposal_id": "e83b4228fbab4ae1bcc4e734c2370e6f",
+  "task": {
+    "task_id": "task-5b9042137ab344f9ade91508811afc45",
+    "object_id": "bottle",
+    "destination_id": "tray",
+    "scene_revision": 1,
+    "object_version": 1,
+    "issued_at_s": 1792492770.891292,
+    "expires_at_s": 1792492780.891292,
+    "evidence_ids": [
+      "operator-fixture:1",
+      "glove-fixture:1",
+      "robot-sim:1"
+    ],
+    "schema": "roboflex.task.v1",
+    "op": "PICK_PLACE"
+  },
+  "provider": "fixture_replay_NOT_live_VLM",
+  "status": "TASK_READY"
+}

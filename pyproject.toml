@@ -4,17 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "roboflex-intent-arm"
-version = "0.1.0"
-description = "RoboFlex temporal intent, shared autonomy and constrained arm control prototype"
+version = "0.2.0"
+description = "RoboFlex cloud multimodal intent, grounded tasks and edge mobile manipulation reference"
 requires-python = ">=3.10"
 dependencies = []
 
 [project.optional-dependencies]
 vision = ["numpy>=1.26,<3", "opencv-contrib-python>=4.8,<5", "mediapipe>=0.10.14,<0.11"]
 serial = ["pyserial>=3.5,<4"]
+sim = ["mujoco>=3.3,<4", "numpy>=1.26,<3", "Pillow>=10,<13", "imageio-ffmpeg>=0.6,<1"]
+stream = ["camera-stream>=0.3.8,<0.4"]
 
 [project.scripts]
 roboflex = "roboflex.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["roboflex*"]
+
+[tool.setuptools.package-data]
+"roboflex.stack" = ["scene.xml"]

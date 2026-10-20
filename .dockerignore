@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+!.env.example
+__pycache__
+*.pyc
+runs
+models
+media
+assets
+presentation
+.venv

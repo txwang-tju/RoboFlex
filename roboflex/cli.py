@@ -243,6 +243,46 @@ def main():
         from .evaluation import evaluate
         print(json.dumps(evaluate(args.input), ensure_ascii=False, indent=2))
     p.set_defaults(func=evaluate)
+    p = commands.add_parser("cloud", help="Cloud intent gateway; replay provider unless explicitly configured")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=8766)
+    p.add_argument("--provider", choices=("replay","live"), default="replay")
+    def cloud(args):
+        from .stack.service import make_server
+        from .stack.vlm import CompatibleVLM, ReplayVLM
+        provider=CompatibleVLM() if args.provider=="live" else ReplayVLM()
+        with make_server(args.host,args.port,provider) as server:
+            print(f"Intent gateway: {args.host}:{args.port}; provider={provider.name}")
+            server.serve_forever()
+    p.set_defaults(func=cloud)
+    p = commands.add_parser("simulate", help="MuJoCo cloud-to-edge reference; no hardware needed")
+    from .stack.runner import SCENARIOS as STACK_SCENARIOS
+    p.add_argument("--scenario", choices=STACK_SCENARIOS, default="success")
+    p.add_argument("--provider", choices=("replay","live"), default="replay")
+    p.add_argument("--gateway", help="Optional cloud gateway base URL")
+    p.add_argument("--output", default="runs/cloud-edge-sim")
+    p.add_argument("--video", action="store_true", help="Export simulator-rendered MP4, not generated AI footage")
+    def simulate(args):
+        from .stack.runner import run_simulation
+        report=run_simulation(args)
+        expected={"success":"COMPLETE","target-shift":"COMPLETE","no-intent":"IDLE", "cancel":"CANCELLED","network-loss":"CANCELLED","blocked":"FAULT"}
+        if report["state"]!=expected[args.scenario]:
+            raise RuntimeError(f"Unexpected result: {report['state']} / {report['reason']}")
+    p.set_defaults(func=simulate)
+    p = commands.add_parser("describe-hand", help="Offline image + measured glove JSON to structured hand text")
+    p.add_argument("--image", required=True)
+    p.add_argument("--glove-json", required=True)
+    p.add_argument("--model", default="models/hand_landmarker.task")
+    p.add_argument("--output", default="runs/hand-description.json")
+    def describe_hand(args):
+        from .stack.hand_input import describe_image
+        result = describe_image(args.image, args.model, args.glove_json)
+        path = Path(args.output)
+        if path.exists():raise ValueError("Choose a new output file to preserve earlier observations")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf8")
+        print(path.resolve())
+    p.set_defaults(func=describe_hand)
     args = parser.parse_args()
     try:
         args.func(args)

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1510" viewBox="0 0 1800 1510"><defs><marker id="teal" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#11A397"/></marker><marker id="amber" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#CE8A26"/></marker><marker id="grey" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#758BA0"/></marker></defs><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}</style><rect width="1800" height="1510" fill="#F8FBFD"/>
+<text x="40" y="55" fill="#075789" font-size="34" font-weight="700" text-anchor="start">知意随行 RoboFlex</text>
+<text x="40" y="105" fill="#18324D" font-size="38" font-weight="700" text-anchor="start">从人的意图，到连续移动操作</text>
+<text x="1760" y="55" fill="#617A8D" font-size="23" font-weight="600" text-anchor="end">项目总体架构</text>
+<text x="1760" y="101" fill="#617A8D" font-size="23" font-weight="400" text-anchor="end">感知语义在云端 · 运动反馈在本地</text>
+<rect x="40" y="150" width="490" height="1110" rx="22" fill="#F1F6FA" stroke="#D8E5ED" stroke-width="2"/>
+<rect x="570" y="150" width="660" height="1110" rx="22" fill="#EDF8F7" stroke="#CAE7E3" stroke-width="2"/>
+<rect x="1270" y="150" width="490" height="1110" rx="22" fill="#F1F6FA" stroke="#D8E5ED" stroke-width="2"/>
+<text x="65" y="195" fill="#075789" font-size="27" font-weight="700" text-anchor="start">01  使用者端</text>
+<text x="600" y="195" fill="#087F77" font-size="27" font-weight="700" text-anchor="start">02  腾讯云 · 多模态意图与任务</text>
+<text x="1295" y="195" fill="#075789" font-size="27" font-weight="700" text-anchor="start">03  机器人端 · 本地闭环</text>
+<rect x="70" y="250" width="430" height="180" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="94" y="290" fill="#075789" font-size="25" font-weight="700" text-anchor="start">传感手套</text>
+<text x="94" y="327" fill="#496275" font-size="21" font-weight="400" text-anchor="start">柔性弯曲传感器 + IMU / 陀螺仪</text>
+<text x="94" y="358" fill="#496275" font-size="21" font-weight="400" text-anchor="start">ESP32 采集姿态 · Wi-Fi 上行</text>
+<text x="94" y="389" fill="#496275" font-size="21" font-weight="400" text-anchor="start">标定后输出关节弯曲与运动特征</text>
+<rect x="70" y="500" width="430" height="150" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="94" y="540" fill="#075789" font-size="25" font-weight="700" text-anchor="start">使用者 RGB 视频</text>
+<text x="94" y="577" fill="#496275" font-size="21" font-weight="400" text-anchor="start">手部动作、物体关系、候选目标</text>
+<text x="94" y="608" fill="#496275" font-size="21" font-weight="400" text-anchor="start">图像与传感数据分别采集、再对齐</text>
+<rect x="70" y="740" width="430" height="150" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="94" y="780" fill="#075789" font-size="25" font-weight="700" text-anchor="start">人的决策参与</text>
+<text x="94" y="817" fill="#496275" font-size="21" font-weight="400" text-anchor="start">低负担确认目标与目的地</text>
+<text x="94" y="848" fill="#496275" font-size="21" font-weight="400" text-anchor="start">允许不操作、消歧与撤回</text>
+<rect x="70" y="1000" width="430" height="200" rx="16" fill="#EAF2F8" stroke="#D4E2EC" stroke-width="2"/>
+<text x="94" y="1040" fill="#075789" font-size="25" font-weight="700" text-anchor="start">交互原则</text>
+<text x="94" y="1077" fill="#496275" font-size="21" font-weight="400" text-anchor="start">不依赖语音指令</text>
+<text x="94" y="1108" fill="#496275" font-size="21" font-weight="400" text-anchor="start">从连续行为推断候选意图</text>
+<text x="94" y="1139" fill="#496275" font-size="21" font-weight="400" text-anchor="start">VLM 不直接输出电机命令</text>
+<text x="94" y="1170" fill="#496275" font-size="21" font-weight="400" text-anchor="start">用户确认后才编译可执行任务</text>
+<rect x="610" y="230" width="580" height="100" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="634" y="270" fill="#075789" font-size="25" font-weight="700" text-anchor="start">多源同步与最新帧缓存</text>
+<text x="634" y="307" fill="#496275" font-size="21" font-weight="400" text-anchor="start">时间戳 / 会话 / 序号 / 时效校验</text>
+<rect x="610" y="375" width="580" height="140" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="634" y="415" fill="#075789" font-size="25" font-weight="700" text-anchor="start">多模态特征与结构化描述</text>
+<text x="634" y="452" fill="#496275" font-size="21" font-weight="400" text-anchor="start">MediaPipe：仅从图像提取手部关键点</text>
+<text x="634" y="483" fill="#496275" font-size="21" font-weight="400" text-anchor="start">柔性 + IMU：独立标定后转为特征文本</text>
+<rect x="610" y="560" width="580" height="120" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="634" y="600" fill="#075789" font-size="25" font-weight="700" text-anchor="start">事件触发 VLM · 模型可配置</text>
+<text x="634" y="637" fill="#496275" font-size="21" font-weight="400" text-anchor="start">关键帧 + 手部特征 → 意图候选 / 置信度</text>
+<rect x="610" y="725" width="580" height="160" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="634" y="765" fill="#075789" font-size="25" font-weight="700" text-anchor="start">Task Token 编译与空间绑定</text>
+<text x="634" y="802" fill="#496275" font-size="21" font-weight="400" text-anchor="start">确认 + 目标 / 目的地 ID + 版本 + 有效期</text>
+<text x="634" y="833" fill="#496275" font-size="21" font-weight="400" text-anchor="start">绑定 world 坐标下的米制位姿</text>
+<text x="634" y="864" fill="#496275" font-size="21" font-weight="400" text-anchor="start">检查观测时效、场景版本与执行可行性</text>
+<rect x="610" y="930" width="580" height="270" rx="16" fill="#E7F4F2" stroke="#8ACFC5" stroke-width="2"/>
+<text x="634" y="970" fill="#075789" font-size="25" font-weight="700" text-anchor="start">合作研究 · 慢层全局规划</text>
+<text x="634" y="1007" fill="#496275" font-size="21" font-weight="400" text-anchor="start">可靠性感知的时空全身轨迹优化</text>
+<text x="634" y="1041" fill="#496275" font-size="21" font-weight="400" text-anchor="start">感知时间保障 · 补偿余量 · 连续任务</text>
+<text x="634" y="1075" fill="#496275" font-size="21" font-weight="400" text-anchor="start">输出底盘与机械臂的全身参考轨迹</text>
+<text x="634" y="1109" fill="#496275" font-size="21" font-weight="400" text-anchor="start">接收状态变化与失败事件，在线重规划</text>
+<text x="634" y="1170" fill="#087F77" font-size="18" font-weight="600" text-anchor="start">合作研究基础已完成；联合优化器通过适配接口接入</text>
+<rect x="1310" y="230" width="410" height="170" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="1334" y="270" fill="#075789" font-size="25" font-weight="700" text-anchor="start">机器人视觉回传</text>
+<text x="1334" y="307" fill="#496275" font-size="20" font-weight="400" text-anchor="start">相机 + camera-stream</text>
+<text x="1334" y="337" fill="#496275" font-size="20" font-weight="400" text-anchor="start">最新帧优先 · 广和通 4G</text>
+<text x="1334" y="367" fill="#496275" font-size="20" font-weight="400" text-anchor="start">公网经安全隧道 / 鉴权网关</text>
+<rect x="1310" y="455" width="410" height="180" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="1334" y="495" fill="#075789" font-size="25" font-weight="700" text-anchor="start">场景定位与机器人状态</text>
+<text x="1334" y="532" fill="#496275" font-size="20" font-weight="400" text-anchor="start">深度 / 标记标定 / 已验证地图</text>
+<text x="1334" y="563" fill="#496275" font-size="20" font-weight="400" text-anchor="start">物体位姿、目标 ID、坐标系</text>
+<text x="1334" y="594" fill="#496275" font-size="20" font-weight="400" text-anchor="start">RGB 本身不等于米制 3D 地图</text>
+<rect x="1310" y="685" width="410" height="130" rx="16" fill="#FFF6E7" stroke="#E7C795" stroke-width="2"/>
+<text x="1334" y="725" fill="#A66D1D" font-size="25" font-weight="700" text-anchor="start">独立本地停止链路</text>
+<text x="1334" y="762" fill="#496275" font-size="20" font-weight="400" text-anchor="start">急停 / 看门狗 / 人工接管</text>
+<text x="1334" y="791" fill="#496275" font-size="20" font-weight="400" text-anchor="start">断网与云端延迟不阻塞停止</text>
+<rect x="1310" y="865" width="410" height="210" rx="16" fill="#E7F4F2" stroke="#8ACFC5" stroke-width="2"/>
+<text x="1334" y="905" fill="#075789" font-size="25" font-weight="700" text-anchor="start">合作研究 · 相位加权反馈</text>
+<text x="1334" y="942" fill="#496275" font-size="20" font-weight="400" text-anchor="start">按阶段平滑调整代价权重：</text>
+<text x="1334" y="972" fill="#496275" font-size="20" font-weight="400" text-anchor="start">轨迹跟踪 / 任务误差 / 平滑性</text>
+<text x="1334" y="1002" fill="#496275" font-size="20" font-weight="400" text-anchor="start">局部反馈补偿 · 安全约束</text>
+<text x="1334" y="1032" fill="#496275" font-size="20" font-weight="400" text-anchor="start">参考控制节拍 50 Hz</text>
+<rect x="1310" y="1120" width="410" height="110" rx="16" fill="#FFFFFF" stroke="#D8E5ED" stroke-width="2"/>
+<text x="1334" y="1160" fill="#075789" font-size="25" font-weight="700" text-anchor="start">执行硬件</text>
+<text x="1334" y="1197" fill="#496275" font-size="19" font-weight="400" text-anchor="start">树莓派 · 麦轮底盘 · 舵机 · 柔性爪</text>
+<path d="M500 290 L610 270" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="518" y="252" fill="#075789" font-size="18" font-weight="600" text-anchor="start">姿态</text>
+<path d="M500 550 L550 550 L550 310 L610 310" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="514" y="530" fill="#075789" font-size="18" font-weight="600" text-anchor="start">RGB</text>
+<path d="M900 330 L900 375" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M900 515 L900 560" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M900 680 L900 725" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M900 885 L900 930" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M500 800 L610 800" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="512" y="785" fill="#075789" font-size="18" font-weight="600" text-anchor="start">确认</text>
+<path d="M1310 285 L1190 285" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="1200" y="268" fill="#075789" font-size="18" font-weight="600" text-anchor="start">视频</text>
+<path d="M1310 550 L1250 550 L1250 840 L1190 840" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="1238" y="675" fill="#617A8D" font-size="18" font-weight="600" text-anchor="start">场景</text>
+<path d="M1190 985 L1310 985" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="1201" y="970" fill="#075789" font-size="18" font-weight="600" text-anchor="start">轨迹</text>
+<path d="M1515 1075 L1515 1120" fill="none" stroke="#11A397" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M1720 1175 L1740 1175 L1740 1035 L1720 1035" fill="none" stroke="#758BA0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#grey)"/>
+<text x="1622" y="1104" fill="#617A8D" font-size="18" font-weight="600" text-anchor="start">状态反馈</text>
+<path d="M1515 815 L1515 865" fill="none" stroke="#CE8A26" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#amber)"/>
+<path d="M1310 1050 L1246 1050 L1246 1105 L1190 1105" fill="none" stroke="#758BA0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#grey)"/>
+<text x="1203" y="1135" fill="#617A8D" font-size="18" font-weight="600" text-anchor="start">事件</text>
+<rect x="40" y="1290" width="1720" height="120" rx="18" fill="#FFFFFF" stroke="#C9DDE7" stroke-width="2"/>
+<text x="64" y="1328" fill="#075789" font-size="25" font-weight="700" text-anchor="start">当前开源无硬件验证</text>
+<text x="370" y="1328" fill="#18324D" font-size="24" font-weight="600" text-anchor="start">同一 Task Token → MuJoCo 参考后端 → 动力学步进 / 日志 / 渲染视频</text>
+<text x="64" y="1370" fill="#496275" font-size="22" font-weight="400" text-anchor="start">参考执行：A* + IK + 阶段执行；输入可用回放或在线 VLM；空间场景由仿真真值提供。</text>
+<text x="64" y="1447" fill="#075789" font-size="21" font-weight="700" text-anchor="start">实现口径</text>
+<text x="195" y="1447" fill="#496275" font-size="21" font-weight="400" text-anchor="start">云端契约 / 感知接口 / 仿真参考执行已实现；合作研究联合优化器与硬件驱动按接口对接。</text>
+<text x="64" y="1482" fill="#A66D1D" font-size="21" font-weight="700" text-anchor="start">物理边界</text>
+<text x="195" y="1482" fill="#496275" font-size="21" font-weight="400" text-anchor="start">柔性爪以被动顺应缓冲接触，当前无力反馈；参考仿真不验证柔性爪抓蛋安全。</text>
+</svg>

@@ -1,0 +1,5 @@
+# Exact versions used for the 2026-10-20 reference simulation.
+mujoco==3.16.0
+numpy==2.5.4
+Pillow==12.3.0
+imageio-ffmpeg==0.6.0
